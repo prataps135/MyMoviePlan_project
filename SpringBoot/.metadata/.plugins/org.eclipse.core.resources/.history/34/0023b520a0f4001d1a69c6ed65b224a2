@@ -1,0 +1,32 @@
+package com.movie.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.movie.model.Users;
+import com.movie.repository.UserRepo;
+
+@Service
+public class UserServiceImpl implements UserService{
+	
+	@Autowired
+	UserRepo repo;
+	
+	@Override
+	public Users addUser(Users user) {
+		return repo.save(user);
+	}
+
+	@Override
+	public Users getByEmail(String emial) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Users getByEmailAndPassword(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
