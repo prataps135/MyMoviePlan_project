@@ -36,4 +36,14 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<>("Admin not found in Database",HttpStatus.CONFLICT);
 	}
 	
+	@ExceptionHandler(value = MovieNotFoundException.class)
+	public ResponseEntity<Object> exception(MovieNotFoundException ex){
+		return new ResponseEntity<>("Movie not foudn in DataBase",HttpStatus.CONFLICT);
+	}
+	
+	@ExceptionHandler(value = MovieAlreadyExistsException.class)
+	public ResponseEntity<Object> exception(MovieAlreadyExistsException ex){
+		return new ResponseEntity<>("Movie already Exists in Database",HttpStatus.CONFLICT);
+	}
+	
 }

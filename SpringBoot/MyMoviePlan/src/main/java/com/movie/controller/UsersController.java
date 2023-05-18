@@ -19,7 +19,7 @@ import com.movie.service.UsersService;
 import jakarta.validation.Valid;
 
 @RestController
-//@RequestMapping(value = "/movie")
+@RequestMapping(value = "/api/movie")
 @Validated
 public class UsersController {
 

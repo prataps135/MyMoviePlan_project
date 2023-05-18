@@ -41,7 +41,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
-
+		<!--Cross origin Dependency-->
+		<dependency>
+			<groupId>com.allenru</groupId>
+			<artifactId>cross-origin</artifactId>
+			<version>1.0.1</version>
+		</dependency>
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>

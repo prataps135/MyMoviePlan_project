@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.movie.exception.AdminAlreadyExistsException;
 import com.movie.exception.AdminNotFoundException;
@@ -18,6 +19,7 @@ import com.movie.service.AdminService;
 import jakarta.validation.Valid;
 
 @RestController
+@RequestMapping(value = "/api/movie")
 @Validated
 public class AdminController {
 	
