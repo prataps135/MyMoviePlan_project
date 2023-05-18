@@ -9,13 +9,12 @@ import com.movie.repository.UsersRepo;
 public class UsersServiceImpl implements UsersService{
 	
 	@Autowired
-	UsersRepo repo;
+	private UsersRepo repo;
 	
 	@Override
 	public Users addUser(Users user) {
-//		Users usertemp = repo.save(user);
-//		return usertemp;
-		return repo.save(user);
+		Users usertemp = repo.save(user);
+		return usertemp;
 	}
 
 	@Override

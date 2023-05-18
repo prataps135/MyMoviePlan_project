@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Entity
@@ -14,22 +16,25 @@ import lombok.Data;
 public class Users {
 
 	@Id
+	@NotNull
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@Column
-//	@NotNull
-//	@Pattern(regexp="^[a-zA-Z]*$", message="Please Try again")
+	@NotNull
+	@Pattern(regexp="^[a-zA-Z]*$", message="Please Try again")
 	private String userName;
 	
 	@Column
-//	@NotNull
+	@NotNull
 	private String userPassword;
 	
 	@Column
+	@NotNull
 	private String userEmail;
 	
 	@Column
+	@NotNull
 	private int userContact;
 
 	public int getId() {
