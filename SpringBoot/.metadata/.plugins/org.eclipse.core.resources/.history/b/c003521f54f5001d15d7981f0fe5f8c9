@@ -1,5 +1,0 @@
-package com.movie.exception;
-
-public class AdminNotFoundException extends Exception {
-
-}
