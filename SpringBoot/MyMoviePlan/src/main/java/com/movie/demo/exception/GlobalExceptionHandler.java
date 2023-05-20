@@ -46,4 +46,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<>("Movie already Exists in Database",HttpStatus.CONFLICT);
 	}
 	
+	public ResponseEntity<Object> exception(DeleteMovieException ex){
+		return new ResponseEntity<>("Deletion is not Possible",HttpStatus.CONFLICT);
+	}
 }

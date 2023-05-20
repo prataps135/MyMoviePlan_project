@@ -52,8 +52,10 @@ public class MovieController {
 	@CrossOrigin(originPatterns = "*", allowCredentials = "true", allowedHeaders = "*")
 	@GetMapping(value="/movie/all")
 	public ResponseEntity<Iterable<Movie>> getAllMovies() throws Exception{
-		Iterable<Movie> movie = movieService.getMovieList();
+		Iterable<Movie> movie = movieService.getAllMovies();
 		return new ResponseEntity<>(movie,HttpStatus.FOUND);
 	}
+	
+	
 
 }
