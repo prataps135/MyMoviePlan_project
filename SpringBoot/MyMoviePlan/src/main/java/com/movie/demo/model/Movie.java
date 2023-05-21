@@ -28,6 +28,18 @@ public class Movie {
 	@Column
 	@NotNull
 	private int ticketValue;
+	
+	@Column
+	@NotNull
+	private String genre;
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
 
 	public int getId() {
 		return id;

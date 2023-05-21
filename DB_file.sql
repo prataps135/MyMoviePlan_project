@@ -18,5 +18,26 @@ create table users(id int auto_increment not null, userName varchar(100) not nul
  
  select * from admin;
  
- create table movie(id int auto_increment not null, movieName varchar(100) not null, movieDescription varchar(255)
- , ticketValue int not null, primary key(id));
+ create table movie(id int auto_increment not null, movieName varchar(100) not null, 
+ movieDescription varchar(255),genre varchar(100), ticketValue int not null, 
+ primary key(id));
+ 
+ 
+ 
+ create table movie_resource(resourceCode varchar(100) not null, resourceDetail varchar(100) not null);
+
+select *from movie_resource;
+
+insert into movie_resource(resourceCode, resourceDetail) values ('genre', 'Action');
+insert into movie_resource(resourceCode, resourceDetail) values ('genre', 'Adventure');
+insert into movie_resource(resourceCode, resourceDetail) values ('genre', 'Animated');
+insert into movie_resource(resourceCode, resourceDetail) values ('genre', 'Comedy');
+insert into movie_resource(resourceCode, resourceDetail) values ('genre', 'Crime');
+insert into movie_resource(resourceCode, resourceDetail) values ('genre', 'Drama');
+insert into movie_resource(resourceCode, resourceDetail) values ('genre', 'Horror');
+insert into movie_resource(resourceCode, resourceDetail) values ('genre', 'Mystery');
+insert into movie_resource(resourceCode, resourceDetail) values ('genre', 'Romance');
+insert into movie_resource(resourceCode, resourceDetail) values ('genre', 'Science Fiction');
+insert into movie_resource(resourceCode, resourceDetail) values ('genre','Thriller');
+ 
+ 
