@@ -39,7 +39,7 @@ public class AdminController {
 		}
 		Admin adminObj = null;
 		adminObj = adminService.addAdmin(admin);
-		return new ResponseEntity<>(adminObj, HttpStatus.CREATED);
+		return new ResponseEntity<Admin>(adminObj, HttpStatus.CREATED);
 	}
 
 	@CrossOrigin(originPatterns = "*", allowCredentials = "true", allowedHeaders = "*")
@@ -48,8 +48,9 @@ public class AdminController {
 		Admin admin = adminService.getByEmail(email);
 		if (admin == null) {
 			throw new AdminNotFoundException();
-		}
-		return new ResponseEntity<>(admin, HttpStatus.FOUND);
+		} 
+		return new ResponseEntity<Admin>(admin,HttpStatus.FOUND);
+		
 	}
 
 	@CrossOrigin(originPatterns = "*", allowCredentials = "true", allowedHeaders = "*")
@@ -64,6 +65,6 @@ public class AdminController {
 		if (adminObj == null) {
 			throw new LoginException();
 		}
-		return new ResponseEntity<>(adminObj, HttpStatus.FOUND);
+		return new ResponseEntity<Admin>(adminObj, HttpStatus.FOUND);
 	}
 }

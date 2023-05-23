@@ -25,6 +25,13 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ToastrModule } from 'ngx-toastr';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
+import { AdminService } from './services/Admin/admin.service';
+import { AuthenticationService } from './services/Authentication/authentication.service';
+import { NotificationService } from './services/Notification/notification.service';
+import { UsersService } from './services/Users/users.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,6 +43,10 @@ import { HomeComponent } from './components/home/home.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
@@ -55,9 +66,14 @@ import { HomeComponent } from './components/home/home.component';
     MatTableModule,
     MatPaginatorModule,
     MatAutocompleteModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    AdminService,
+    AuthenticationService,
+    NotificationService,
+    UsersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

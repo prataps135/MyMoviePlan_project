@@ -46,7 +46,7 @@ public class MovieController {
 	}
 
 	@CrossOrigin(originPatterns = "*", allowCredentials = "true", allowedHeaders = "*")
-	@GetMapping(value = "/movie/{name}")
+	@GetMapping(value = "/movie/name/{name}")
 	public ResponseEntity<Movie> getMovieByName(@PathVariable String name) throws Exception {
 		Movie movie = movieService.getByName(name);
 		if (movie == null)
@@ -62,7 +62,7 @@ public class MovieController {
 	}
 
 	@CrossOrigin(originPatterns = "*", allowCredentials = "true", allowedHeaders = "*")
-	@GetMapping(value = "/movie/{id}")
+	@GetMapping(value = "/movie/id/{id}")
 	public ResponseEntity<Movie> getMovieById(@PathVariable("id") int id) throws Exception {
 		Movie movie = movieService.getById(id);
 		if (movie == null)

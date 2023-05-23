@@ -2,6 +2,7 @@ package com.movie.demo.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -15,6 +16,7 @@ public class MovieResource {
 	@Column(name="resourceCode")
 	private String resourceCode;
 	
+	@Id
 	@NotNull
 	@Column(name="resorceDetail")
 	private String resourceDetail;
