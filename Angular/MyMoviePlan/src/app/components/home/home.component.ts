@@ -89,12 +89,27 @@ export class HomeComponent implements OnInit {
           }
         },
         (err) => {
-          if (this.loginForm.valid) {
+          console.log('This is error ', err);
+
+          this.currentUser = err.error;
+          this.authService.setType(this.roles[0]);
+          if (this.currentUser.userPassword === password) {
+            this.notifyService.showSuccess('Welcome User', 'MyMoviePlan');
+            this.router.navigate(['/home']);
+          }
+          else {
             this.notifyService.showError(
               'Email Id or Password is Incorrect',
               'Please try again'
             );
           }
+
+          // if (this.loginForm.valid) {
+          //   this.notifyService.showError(
+          //     'Email Id or Password is Incorrect',
+          //     'Please try again'
+          //   );
+          // }
         }
       );
     } else if (roles === this.roles[1]) {
@@ -114,12 +129,28 @@ export class HomeComponent implements OnInit {
           }
         },
         (err: any) => {
-          if (this.loginForm.valid) {
+
+          console.log('This is error ', err);
+
+          this.adminUser = err.error;
+          this.authService.setType(this.roles[1]);
+          // console.log(this.adminUser.adminPassword);
+          if (this.adminUser.adminPassword === password) {
+            this.notifyService.showSuccess('Welcome Admin User', 'MyMoviePlan');
+            this.router.navigate(['/home']);
+          } else {
             this.notifyService.showError(
               'Email Id or Password is Incorrect',
               'Please try again'
             );
           }
+
+          // if (this.loginForm.valid) {
+          //   this.notifyService.showError(
+          //     'Email Id or Password is Incorrect',
+          //     'Please try again'
+          //   );
+          // }
         }
       );
     }

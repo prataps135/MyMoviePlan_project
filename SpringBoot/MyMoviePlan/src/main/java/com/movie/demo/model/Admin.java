@@ -26,11 +26,11 @@ public class Admin {
 	
 	@Column
 	@NotNull
-	private String adminPassword;
+	private String adminEmail;
 	
 	@Column
 	@NotNull
-	private String adminEmail;
+	private String adminPassword;
 	
 	@Column
 	@NotNull
