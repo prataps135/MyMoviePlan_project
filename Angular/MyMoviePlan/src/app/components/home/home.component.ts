@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IAdmin } from 'src/app/model/Admin';
-import { IUser } from 'src/app/model/User';
+import { Admin } from 'src/app/model/Admin';
+import { Users } from 'src/app/model/User';
 import { AdminService } from 'src/app/services/Admin/admin.service';
 import { AuthenticationService } from 'src/app/services/Authentication/authentication.service';
 import { NotificationService } from 'src/app/services/Notification/notification.service';
@@ -13,12 +13,12 @@ import { UsersService } from 'src/app/services/Users/users.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   roles = ['Users', 'Admin'];
-  currentUser: IUser;
-  adminUser: IAdmin;
+  currentUser: Users;
+  adminUser: Admin;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit{
     private adminService: AdminService,
     private authService: AuthenticationService,
     private notifyService: NotificationService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -64,6 +64,10 @@ export class HomeComponent implements OnInit{
     }
   }
 
+  // onSubmit(loginForm:any){
+  //   console.log(loginForm);
+  // }
+
   logIn() {
     const email = this.loginForm.controls['email'].value;
     const password = this.loginForm.controls['password'].value;
@@ -76,7 +80,8 @@ export class HomeComponent implements OnInit{
           if (this.currentUser.userPassword === password) {
             this.notifyService.showSuccess('Welcome User', 'MyMoviePlan');
             this.router.navigate(['/home']);
-          } else {
+          }
+          else {
             this.notifyService.showError(
               'Email Id or Password is Incorrect',
               'Please try again'
@@ -97,6 +102,7 @@ export class HomeComponent implements OnInit{
         (data: any) => {
           this.adminUser = data;
           this.authService.setType(this.roles[1]);
+          console.log(this.adminUser.adminPassword);
           if (this.adminUser.adminPassword === password) {
             this.notifyService.showSuccess('Welcome Admin User', 'MyMoviePlan');
             this.router.navigate(['/home']);

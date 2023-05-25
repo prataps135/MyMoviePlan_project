@@ -32,12 +32,24 @@ import { UsersService } from './services/Users/users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { AdminRegistrationComponent } from './components/admin-registration/admin-registration.component';
+import { AdminRegistrationService } from './services/Admin registration/admin-registration.service';
+import { UserRegistrationService } from './services/User registration/user-registration.service';
+import { FilterPipe } from './pipes/filter/filter.pipe';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { AddMovieComponent } from './components/add-movie/add-movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    UserRegistrationComponent,
+    AdminRegistrationComponent,
+    FilterPipe,
+    MovieListComponent,
+    AddMovieComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +84,9 @@ import { CommonModule } from '@angular/common';
     AdminService,
     AuthenticationService,
     NotificationService,
-    UsersService
+    UsersService,
+    AdminRegistrationService,
+    UserRegistrationService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { IUser } from 'src/app/model/User';
+import { Observable} from 'rxjs';
+import { Users } from 'src/app/model/User';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class UsersService {
         'Access-Control-Allow-Headers': '*',
       }),
     };
-    return this.http.get(url + '/' + email, options);
+    return this.http.get(`${url}/${email}`, options);
   }
 }
 

@@ -1,4 +1,4 @@
-export class IAdmin{
+export class Admin{
     id : number;
     adminName : string;
     adminPassword : string;

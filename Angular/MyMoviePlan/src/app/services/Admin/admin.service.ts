@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IAdmin } from 'src/app/model/Admin';
+import { Admin } from 'src/app/model/Admin';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +19,10 @@ export class AdminService {
         'Access-Control-Allow-Headers': '*',
       }),
     };
-    return this.http.get(url + '/' + email, options);
+    return this.http.get(`${url}/${email}`, options);
   }
 
-  // public getByEmailAndPassword(admin: IAdmin) {
+  // public getByEmailAndPassword(admin: Admin) {
   //   const url = 'http://localhost:1800/api/admin/login';
   //   let options = {
   //     headers: new HttpHeaders({

@@ -1,7 +1,7 @@
-export class IUser{
+export class Users{
     id : number;
     userName : string;
     userPassword : string;
-    userEmial : string;
+    userEmail : string;
     userContact : string;
 }
