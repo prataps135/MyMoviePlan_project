@@ -49,7 +49,7 @@ public class UsersController {
 		if (user == null) {
 			throw new UserNotFoundException();
 		}
-		return new ResponseEntity<>(user, HttpStatus.FOUND);
+		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
 
 	@CrossOrigin(originPatterns = "*", allowCredentials = "true", allowedHeaders = "*")
@@ -64,6 +64,6 @@ public class UsersController {
 		if (usObj == null) {
 			throw new LoginException();
 		}
-		return new ResponseEntity<>(usObj, HttpStatus.FOUND);
+		return new ResponseEntity<>(usObj, HttpStatus.OK);
 	}
 }

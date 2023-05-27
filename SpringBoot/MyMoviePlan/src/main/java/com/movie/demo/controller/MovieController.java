@@ -51,14 +51,14 @@ public class MovieController {
 		Movie movie = movieService.getByName(name);
 		if (movie == null)
 			throw new MovieNotFoundException();
-		return new ResponseEntity<>(movie, HttpStatus.FOUND);
+		return new ResponseEntity<>(movie, HttpStatus.OK);
 	}
 
 	@CrossOrigin(originPatterns = "*", allowCredentials = "true", allowedHeaders = "*")
 	@GetMapping(value = "/movie/all")
 	public ResponseEntity<Iterable<Movie>> getAllMovies() throws Exception {
 		Iterable<Movie> movie = movieService.getAllMovies();
-		return new ResponseEntity<>(movie, HttpStatus.FOUND);
+		return new ResponseEntity<>(movie, HttpStatus.OK);
 	}
 
 	@CrossOrigin(originPatterns = "*", allowCredentials = "true", allowedHeaders = "*")
@@ -68,7 +68,7 @@ public class MovieController {
 		if (movie == null)
 			throw new MovieNotFoundException();
 		else
-			return new ResponseEntity<>(movie, HttpStatus.FOUND);
+			return new ResponseEntity<>(movie, HttpStatus.OK);
 	}
 
 	@CrossOrigin(originPatterns = "*", allowCredentials = "true", allowedHeaders = "*")

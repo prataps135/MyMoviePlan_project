@@ -49,7 +49,7 @@ public class AdminController {
 		if (admin == null) {
 			throw new AdminNotFoundException();
 		} 
-		return new ResponseEntity<Admin>(admin,HttpStatus.FOUND);
+		return new ResponseEntity<Admin>(admin,HttpStatus.OK);
 		
 	}
 
@@ -65,6 +65,6 @@ public class AdminController {
 		if (adminObj == null) {
 			throw new LoginException();
 		}
-		return new ResponseEntity<Admin>(adminObj, HttpStatus.FOUND);
+		return new ResponseEntity<Admin>(adminObj, HttpStatus.OK);
 	}
 }

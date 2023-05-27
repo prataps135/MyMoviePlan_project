@@ -19,6 +19,7 @@ const routes: Routes = [
       //{ path: 'view-product/:pid', component: ViewProductComponent },
       //{ path: 'update-product/:pid', component: UpdateProductComponent },
       { path: 'admin-reg', component: AdminRegistrationComponent },
+      { path: 'user-reg', component: UserRegistrationComponent }
     ],
   },
   // { path: '**', redirectTo: '/home', pathMatch: 'full' }
