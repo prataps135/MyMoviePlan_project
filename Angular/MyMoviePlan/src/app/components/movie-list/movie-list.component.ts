@@ -56,7 +56,7 @@ export class MovieListComponent implements OnInit {
         this.movies = data;
         this.notifyService.showSuccess(
           'Movie deleted successfully',
-          'Medicare'
+          'MyMoviePlan'
         );
       },
       (err) => {

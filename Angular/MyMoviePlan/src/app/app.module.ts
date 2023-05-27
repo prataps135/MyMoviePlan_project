@@ -39,6 +39,9 @@ import { UserRegistrationService } from './services/User registration/user-regis
 import { FilterPipe } from './pipes/filter/filter.pipe';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
+import { MovieResourceService } from './services/movie-resource/movie-resource.service';
+import { UpdateMovieComponent } from './components/update-movie/update-movie.component';
+import { ViewMovieComponent } from './components/view-movie/view-movie.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,9 @@ import { AddMovieComponent } from './components/add-movie/add-movie.component';
     AdminRegistrationComponent,
     FilterPipe,
     MovieListComponent,
-    AddMovieComponent
+    AddMovieComponent,
+    UpdateMovieComponent,
+    ViewMovieComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +91,8 @@ import { AddMovieComponent } from './components/add-movie/add-movie.component';
     NotificationService,
     UsersService,
     AdminRegistrationService,
-    UserRegistrationService
+    UserRegistrationService,
+    MovieResourceService
   ],
   bootstrap: [AppComponent]
 })

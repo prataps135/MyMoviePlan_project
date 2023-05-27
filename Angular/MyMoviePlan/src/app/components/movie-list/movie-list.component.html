@@ -12,11 +12,11 @@
     </div>
     <div
       class="main-div"
-      *ngFor="let mov of movies | filter : query : 'mname'"
+      *ngFor="let mov of movies | filter : query : 'movieName'"
     >
       <mat-card class="tp-card">
         <mat-card-header class="text">
-          <mat-card-title>{{ mov.mname }}</mat-card-title> </mat-card-header
+          <mat-card-title>{{ mov.movieName }}</mat-card-title> </mat-card-header
         ><img
           mat-card-image
           *ngFor="let image of img"
@@ -25,13 +25,13 @@
           alt="Photo of Product"
         />
         <mat-card-actions>
-          <button mat-raised-button class="button" (click)="viewMovie(mov.mid)">
+          <button mat-raised-button class="button" (click)="viewMovie(mov.id)">
             View
           </button>
-          <button mat-raised-button class="btn" (click)="updateMovie(mov.mid)">
+          <button mat-raised-button class="btn" (click)="updateMovie(mov.id)">
             Update
           </button>
-          <button mat-raised-button class="delete" (click)="deleteMovie(mov.mid)">
+          <button mat-raised-button class="delete" (click)="deleteMovie(mov.id)">
             Delete
           </button>
         </mat-card-actions>

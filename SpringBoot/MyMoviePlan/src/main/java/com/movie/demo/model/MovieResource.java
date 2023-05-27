@@ -18,7 +18,7 @@ public class MovieResource {
 	
 	@Id
 	@NotNull
-	@Column(name="resorceDetail")
+	@Column(name="resourceDetail")
 	private String resourceDetail;
 
 	public String getResourceCode() {

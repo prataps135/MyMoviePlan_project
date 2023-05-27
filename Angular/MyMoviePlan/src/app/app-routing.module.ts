@@ -6,6 +6,8 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { AdminRegistrationComponent } from './components/admin-registration/admin-registration.component';
+import { ViewMovieComponent } from './components/view-movie/view-movie.component';
+import { UpdateMovieComponent } from './components/update-movie/update-movie.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,10 +18,9 @@ const routes: Routes = [
     children: [
       { path: 'movies', component: MovieListComponent },
       { path: 'add-movie', component: AddMovieComponent },
-      //{ path: 'view-product/:pid', component: ViewProductComponent },
-      //{ path: 'update-product/:pid', component: UpdateProductComponent },
+      { path: 'view-movie/:id', component: ViewMovieComponent },
+      { path: 'update-movie/:id', component: UpdateMovieComponent },
       { path: 'admin-reg', component: AdminRegistrationComponent },
-      { path: 'user-reg', component: UserRegistrationComponent }
     ],
   },
   // { path: '**', redirectTo: '/home', pathMatch: 'full' }

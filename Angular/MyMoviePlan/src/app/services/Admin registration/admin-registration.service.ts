@@ -10,7 +10,7 @@ export class AdminRegistrationService {
   constructor(private http: HttpClient) { }
 
   addAdmin(data: Admin) {
-    const url = "http://localhost/api/add/user";
+    const url = "http://localhost:1800/api/add/admin";
     let options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
