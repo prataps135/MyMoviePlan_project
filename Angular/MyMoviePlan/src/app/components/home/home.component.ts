@@ -102,7 +102,6 @@ export class HomeComponent implements OnInit {
         (data: any) => {
           this.adminUser = data;
           this.authService.setType(this.roles[1]);
-          console.log(this.adminUser.adminPassword);
           if (this.adminUser.adminPassword === password) {
             this.notifyService.showSuccess('Welcome Admin User', 'MyMoviePlan');
             this.router.navigate(['/home']);

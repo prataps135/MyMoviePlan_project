@@ -42,6 +42,7 @@ import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { MovieResourceService } from './services/movie-resource/movie-resource.service';
 import { UpdateMovieComponent } from './components/update-movie/update-movie.component';
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ViewMovieComponent } from './components/view-movie/view-movie.component
     MovieListComponent,
     AddMovieComponent,
     UpdateMovieComponent,
-    ViewMovieComponent
+    ViewMovieComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

@@ -28,10 +28,12 @@
           <button mat-raised-button class="button" (click)="viewMovie(mov.id)">
             View
           </button>
-          <button mat-raised-button class="btn" (click)="updateMovie(mov.id)">
+          <button  *ngIf="roleAdmin === 'Admin'"
+          mat-raised-button class="btn" (click)="updateMovie(mov.id)">
             Update
           </button>
-          <button mat-raised-button class="delete" (click)="deleteMovie(mov.id)">
+          <button  *ngIf="roleAdmin === 'Admin'"
+          mat-raised-button class="delete" (click)="deleteMovie(mov.id)">
             Delete
           </button>
         </mat-card-actions>

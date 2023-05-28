@@ -8,10 +8,12 @@ import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { AdminRegistrationComponent } from './components/admin-registration/admin-registration.component';
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
 import { UpdateMovieComponent } from './components/update-movie/update-movie.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'user-reg', component: UserRegistrationComponent },
+  { path: 'payment', component: PaymentComponent },
   {
     path: 'home',
     component: DashboardComponent,

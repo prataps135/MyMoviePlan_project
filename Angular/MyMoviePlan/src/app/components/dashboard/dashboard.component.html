@@ -15,6 +15,7 @@
         </a>
         <a
           mat-button
+          *ngIf="roleAdmin === 'Admin'"
           [routerLink]="'/home/admin-reg'"
           routerLinkActive="active"
           [routerLinkActive]="'activebutton'"
@@ -31,6 +32,7 @@
         </a>
         <a
           mat-button
+          *ngIf="roleAdmin === 'Admin'"
           [routerLink]="'/home/add-movie'"
           routerLinkActive="active"
           [routerLinkActive]="'activebutton'"

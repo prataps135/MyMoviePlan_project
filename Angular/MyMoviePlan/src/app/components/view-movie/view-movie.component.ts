@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from 'src/app/model/Movie';
 import { AuthenticationService } from 'src/app/services/Authentication/authentication.service';
@@ -10,11 +10,11 @@ import { NotificationService } from 'src/app/services/Notification/notification.
   templateUrl: './view-movie.component.html',
   styleUrls: ['./view-movie.component.scss']
 })
-export class ViewMovieComponent {
-  mid: number;
+export class ViewMovieComponent implements OnInit{
+  id: number;
   currentMovie: Movie;
   roleAdmin: any = {};
-  roleCustomer: any = {};
+  roleUsers: any = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -22,12 +22,12 @@ export class ViewMovieComponent {
     private router: Router,
     private authService: AuthenticationService,
     private notifyService: NotificationService
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.route.params.subscribe((params) => (this.mid = +params['mid']));
+    this.route.params.subscribe((params) => (this.id = +params['id']));
     this.movieService
-      .getMovieById(this.mid)
+      .getMovieById(this.id)
       .subscribe(
         (res: any) => (
           (this.currentMovie = res), console.log(this.currentMovie)
@@ -40,11 +40,11 @@ export class ViewMovieComponent {
 
     this.authService
       .getType()
-      .subscribe((roles: any) => (this.roleCustomer = roles));
+      .subscribe((roles: any) => (this.roleUsers = roles));
   }
 
-  deleteMovie(mid: number) {
-    this.movieService.deleteMovieById(mid).subscribe(
+  deleteMovie(id: number) {
+    this.movieService.deleteMovieById(id).subscribe(
       (res: any) => {
         this.notifyService.showSuccess(
           'Movie deleted successfully',
@@ -58,8 +58,8 @@ export class ViewMovieComponent {
     );
   }
 
-  updateMovie(mid: number) {
-    this.router.navigate(['home/update-movie/' + mid]);
+  updateMovie(id: number) {
+    this.router.navigate(['home/update-movie/' + id]);
   }
 
   cancel() {
@@ -68,7 +68,7 @@ export class ViewMovieComponent {
   }
 
   purchase() {
-    this.router.navigate(['/payment-Summary']);
+    this.router.navigate(['/payment']);
   }
 
 }

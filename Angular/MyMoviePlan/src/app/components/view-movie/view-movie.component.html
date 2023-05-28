@@ -12,7 +12,7 @@
             style="
               font-size: 30px;
               font-weight: bold;
-              color: #ffffff;
+              color: blue;
               margin-bottom: 30px;
             "
             >{{ currentMovie.movieName }}</mat-card-title
@@ -28,9 +28,9 @@
           <span style="font-size: 20px; font-weight: bold; color: #ffa07a">
             Genre: {{ currentMovie.genre }}</span
           ><br />
-          <span style="font-size: 20px; font-weight: bold; color: #f08080"
+          <!-- <span style="font-size: 20px; font-weight: bold; color: #f08080"
             >Synopsis:</span
-          ><br />
+          ><br /> -->
           <span
             class="angular-with-newlines"
             style="font-size: 14px; color: #9fe2bf"
@@ -70,7 +70,7 @@
             Cancel
           </button>
           <button
-            *ngIf="roleCustomer === 'Customer'"
+            *ngIf="roleUsers === 'Users'"
             mat-raised-button
             class="purchase"
             (click)="purchase()"
